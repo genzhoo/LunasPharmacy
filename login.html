@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna's Pharmacy</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="log-in">
+        <img class="image-1" src="logo.png" alt="Luna's Pharmacy Logo" />
+        
+        <form class="form-log-in">
+            <div class="input-field">
+                <label for="username" class="label">Username</label>
+                <input type="text" id="username" class="input" placeholder="Enter Your Username" autocomplete="username" required />
+            </div>
+            
+            <div class="input-field">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" class="input" placeholder="Enter Your Password" autocomplete="current-password" required />
+            </div>
+            
+            <p id="login-error" class="login-error" style="display:none;">Incorrect username or password.</p>
+            
+            <div class="checkbox-and-label">
+                <input type="checkbox" id="show-password" class="checkbox" />
+                <label for="show-password" class="show-password">Show Password</label>
+            </div>
+            
+            <button type="submit" class="button">Log In</button>
+            
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("show-password").addEventListener("change", function () {
+            var password = document.getElementById("password");
+            password.type = this.checked ? "text" : "password";
+        });
+
+        document.querySelector(".form-log-in").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value;
+            var error = document.getElementById("login-error");
+
+            if (username === "admin" && password === "admin123") {
+                sessionStorage.setItem("luna_admin", "1");
+                window.location.href = "pos.html";
+            } else {
+                error.style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

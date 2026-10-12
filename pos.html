@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point of Sale - Luna's Pharmacy</title>
+    <link rel="stylesheet" href="pos.css">
+</head>
+<body>
+
+    <header class="pos-header">
+        <img class="pos-logo" src="logo.png" alt="Luna's Pharmacy Logo" />
+        <div class="pos-title">
+            <h1>Point of Sale</h1>
+            <span>Administrator</span>
+        </div>
+        <nav class="pos-nav">
+            <a href="home.html" class="pos-link">Back to Store</a>
+            <button type="button" id="logout-btn" class="pos-logout">Log Out</button>
+        </nav>
+    </header>
+
+    <main class="pos-main">
+        <section class="catalog">
+            <div class="catalog-tools">
+                <input type="text" id="search-input" class="search-input" placeholder="Search product..." aria-label="Search products" />
+                <div id="cat-filters" class="cat-filters"></div>
+            </div>
+            <div id="product-list" class="product-list"></div>
+        </section>
+
+        <aside class="cart">
+            <h2 class="cart-title">Current Sale</h2>
+            <div id="cart-items" class="cart-items">
+                <p class="cart-empty">No items yet. Tap a product to add it.</p>
+            </div>
+            <div class="cart-totals">
+                <div class="total-row"><span>Items</span><span id="cart-count">0</span></div>
+                <div class="total-row"><span>Subtotal</span><span id="subtotal">₱ 0.00</span></div>
+                <div class="total-row grand"><span>Total</span><span id="total">₱ 0.00</span></div>
+            </div>
+            <div class="cart-actions">
+                <button type="button" id="checkout-btn" class="btn-checkout">Checkout</button>
+                <button type="button" id="clear-btn" class="btn-clear">Clear</button>
+            </div>
+        </aside>
+    </main>
+
+    <script src="pos.js"></script>
+</body>
+</html>
