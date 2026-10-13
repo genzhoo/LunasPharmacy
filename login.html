@@ -45,9 +45,12 @@
             var password = document.getElementById("password").value;
             var error = document.getElementById("login-error");
 
-            if (username === "admin" && password === "admin123") {
-                sessionStorage.setItem("luna_admin", "1");
+            if (username === "cashier" && password === "cashier123") {
+                sessionStorage.setItem("luna_user", "cashier");
                 window.location.href = "pos.html";
+            } else if (username === "admin" && password === "admin123") {
+                sessionStorage.setItem("luna_user", "admin");
+                window.location.href = "inventory-edit.html";
             } else {
                 error.style.display = "block";
             }
